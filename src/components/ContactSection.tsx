@@ -89,10 +89,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                   <Phone size={20} className="text-red" />
                 </div>
                 <div>
-                  <span className="info-label">Direct Corporate Phone</span>
-                  <a href={`tel:${COMPANY_INFO.phone}`} className="info-value-link">
-                    {COMPANY_INFO.phone}
-                  </a>
+                  <span className="info-label">Direct Corporate Phones</span>
+                  <div className="phone-links-group">
+                    <a href={`tel:${COMPANY_INFO.phone}`} className="info-value-link" title={`Call ${COMPANY_INFO.phone}`}>
+                      {COMPANY_INFO.phone}
+                    </a>
+                    <a href={`tel:${COMPANY_INFO.phone2}`} className="info-value-link" title={`Call ${COMPANY_INFO.phone2}`}>
+                      {COMPANY_INFO.phone2}
+                    </a>
+                  </div>
                   <span className="info-sub">Dedicated Operations & Inquiries</span>
                 </div>
               </div>

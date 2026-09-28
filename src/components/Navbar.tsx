@@ -57,15 +57,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             </div>
             <div className="top-bar-right">
               <span className="top-badge">B2B Corporate & Freight Solutions</span>
-              <a href={`tel:${COMPANY_INFO.phone}`} className="top-phone">
+              <div className="top-phone-group">
                 <Phone size={13} className="text-red" />
-                <span>Call Us: <strong>{COMPANY_INFO.phone}</strong></span>
-              </a>
+                <span className="top-phone-label">Call:</span>
+                <a href={`tel:${COMPANY_INFO.phone}`} className="top-phone-link" title={`Call ${COMPANY_INFO.phone}`}>
+                  <strong>{COMPANY_INFO.phone}</strong>
+                </a>
+                <span className="top-phone-sep">/</span>
+                <a href={`tel:${COMPANY_INFO.phone2}`} className="top-phone-link" title={`Call ${COMPANY_INFO.phone2}`}>
+                  <strong>{COMPANY_INFO.phone2}</strong>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Main Navbar */}
+        {/* Main Navbar (White Background) */}
         <nav className="main-nav">
           <div className="container nav-container">
             {/* Brand Logo */}
@@ -90,21 +97,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               ))}
             </div>
 
-            {/* Nav Actions */}
+            {/* Nav Actions with Both Phone Numbers & Quote Button */}
             <div className="nav-actions-desktop">
-              <a 
-                href={`tel:${COMPANY_INFO.phone}`} 
-                className="btn btn-secondary nav-call-btn"
-                title="Call 9021212052"
-              >
-                <Phone size={16} className="text-red" />
-                <span>{COMPANY_INFO.phone}</span>
-              </a>
+              <div className="nav-phones-group">
+                <a 
+                  href={`tel:${COMPANY_INFO.phone}`} 
+                  className="nav-phone-pill"
+                  title={`Call Primary: ${COMPANY_INFO.phone}`}
+                >
+                  <Phone size={13} className="text-red" />
+                  <span>{COMPANY_INFO.phone}</span>
+                </a>
+                <a 
+                  href={`tel:${COMPANY_INFO.phone2}`} 
+                  className="nav-phone-pill"
+                  title={`Call Alternate: ${COMPANY_INFO.phone2}`}
+                >
+                  <Phone size={13} className="text-red" />
+                  <span>{COMPANY_INFO.phone2}</span>
+                </a>
+              </div>
+
               <button 
                 onClick={() => onOpenQuote()} 
                 className="btn btn-primary nav-quote-btn"
               >
-                <FileText size={16} />
+                <FileText size={15} />
                 <span>Get a Quote</span>
               </button>
             </div>
@@ -115,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </nav>
@@ -150,11 +168,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
         <div className="mobile-drawer-footer">
           <div className="mobile-info-card">
-            <p className="mobile-info-title">Need direct coordination?</p>
-            <a href={`tel:${COMPANY_INFO.phone}`} className="mobile-call-link">
-              <Phone size={18} className="text-red" />
-              <span>{COMPANY_INFO.phone}</span>
-            </a>
+            <p className="mobile-info-title">Direct Corporate Contacts</p>
+            <div className="mobile-drawer-phones-list">
+              <a href={`tel:${COMPANY_INFO.phone}`} className="mobile-call-link">
+                <Phone size={16} className="text-red" />
+                <span>{COMPANY_INFO.phone}</span>
+              </a>
+              <a href={`tel:${COMPANY_INFO.phone2}`} className="mobile-call-link">
+                <Phone size={16} className="text-red" />
+                <span>{COMPANY_INFO.phone2}</span>
+              </a>
+            </div>
             <p className="mobile-address-text">{COMPANY_INFO.address.full}</p>
           </div>
 
@@ -174,9 +198,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
       {/* Mobile Sticky Bottom Action Strip */}
       <div className="mobile-bottom-bar">
-        <a href={`tel:${COMPANY_INFO.phone}`} className="mobile-bottom-item">
-          <Phone size={18} />
-          <span>Call</span>
+        <a href={`tel:${COMPANY_INFO.phone}`} className="mobile-bottom-item" title={`Call ${COMPANY_INFO.phone}`}>
+          <Phone size={17} />
+          <span>Call 1</span>
+        </a>
+        <a href={`tel:${COMPANY_INFO.phone2}`} className="mobile-bottom-item" title={`Call ${COMPANY_INFO.phone2}`}>
+          <Phone size={17} />
+          <span>Call 2</span>
         </a>
         <a 
           href={`https://wa.me/91${COMPANY_INFO.phone}?text=Hello%20Luxelogix%20Trans%20Solutions%2C%20I%20would%20like%20to%20inquire%20about%20corporate%20mobility%20and%20logistics%20solutions.`} 
@@ -184,15 +212,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
           rel="noopener noreferrer" 
           className="mobile-bottom-item text-green"
         >
-          <MessageSquare size={18} />
+          <MessageSquare size={17} />
           <span>WhatsApp</span>
         </a>
         <button 
           onClick={() => onOpenQuote()} 
           className="mobile-bottom-item mobile-bottom-cta"
         >
-          <FileText size={18} />
-          <span>Get Quote</span>
+          <FileText size={17} />
+          <span>Quote</span>
         </button>
       </div>
 

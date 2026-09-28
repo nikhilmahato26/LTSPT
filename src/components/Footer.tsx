@@ -70,9 +70,12 @@ export const Footer: React.FC = () => {
 
             <div className="footer-contact-item">
               <Phone size={18} className="text-red flex-shrink-0" />
-              <div>
-                <a href={`tel:${COMPANY_INFO.phone}`} className="footer-contact-link">
+              <div className="footer-phones-group">
+                <a href={`tel:${COMPANY_INFO.phone}`} className="footer-contact-link" title={`Call ${COMPANY_INFO.phone}`}>
                   {COMPANY_INFO.phone}
+                </a>
+                <a href={`tel:${COMPANY_INFO.phone2}`} className="footer-contact-link" title={`Call ${COMPANY_INFO.phone2}`}>
+                  {COMPANY_INFO.phone2}
                 </a>
               </div>
             </div>

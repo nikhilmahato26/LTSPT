@@ -57,13 +57,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
               <span>Explore Our Services</span>
             </a>
 
-            <a 
-              href={`tel:${COMPANY_INFO.phone}`} 
-              className="btn btn-secondary btn-lg hero-cta-call"
-            >
-              <Phone size={18} className="text-red" />
-              <span>Call {COMPANY_INFO.phone}</span>
-            </a>
+            <div className="hero-calls-wrap">
+              <a 
+                href={`tel:${COMPANY_INFO.phone}`} 
+                className="btn btn-secondary btn-lg hero-cta-call"
+                title={`Call ${COMPANY_INFO.phone}`}
+              >
+                <Phone size={18} className="text-red" />
+                <span>Call {COMPANY_INFO.phone}</span>
+              </a>
+
+              <a 
+                href={`tel:${COMPANY_INFO.phone2}`} 
+                className="btn btn-secondary btn-lg hero-cta-call"
+                title={`Call ${COMPANY_INFO.phone2}`}
+              >
+                <Phone size={18} className="text-red" />
+                <span>Call {COMPANY_INFO.phone2}</span>
+              </a>
+            </div>
           </div>
 
           {/* Operational Highlight Badges */}

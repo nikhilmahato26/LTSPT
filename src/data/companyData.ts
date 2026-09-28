@@ -10,7 +10,10 @@ export const COMPANY_INFO = {
   tagline: "Moving People. Moving Business. Moving Possibilities.",
   subTagline: "Integrated mobility, freight forwarding and cargo transportation solutions built for modern businesses.",
   phone: "9021212052",
+  phone2: "9004620865",
+  phones: ["9021212052", "9004620865"],
   phoneFormatted: "+91 90212 12052",
+  phone2Formatted: "+91 90046 20865",
   emails: {
     sales: "sales@luxelogix.com",
     support: "support@luxelogix.com",

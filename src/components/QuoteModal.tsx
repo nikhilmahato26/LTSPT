@@ -110,10 +110,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   <Mail size={18} />
                   <span>Send via Email ({COMPANY_INFO.emails.sales})</span>
                 </button>
-                <a href={`tel:${COMPANY_INFO.phone}`} className="btn btn-white w-full">
-                  <Phone size={18} />
-                  <span>Call Desk Directly ({COMPANY_INFO.phone})</span>
-                </a>
+                <div className="modal-call-actions-grid">
+                  <a href={`tel:${COMPANY_INFO.phone}`} className="btn btn-white w-full">
+                    <Phone size={16} />
+                    <span>Call {COMPANY_INFO.phone}</span>
+                  </a>
+                  <a href={`tel:${COMPANY_INFO.phone2}`} className="btn btn-white w-full">
+                    <Phone size={16} />
+                    <span>Call {COMPANY_INFO.phone2}</span>
+                  </a>
+                </div>
               </div>
             </div>
           ) : (
